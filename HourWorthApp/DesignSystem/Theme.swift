@@ -11,7 +11,14 @@ enum HWTheme {
 
 struct HWCard<Content: View>: View {
     @ViewBuilder let content: Content
-    var body: some View { content.padding(18).frame(maxWidth: .infinity, alignment: .leading).background(Color(uiColor: .secondarySystemGroupedBackground)).clipShape(RoundedRectangle(cornerRadius: 18)).overlay(RoundedRectangle(cornerRadius: 18).stroke(Color.primary.opacity(0.05))) }
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) { content }
+            .padding(18)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color(uiColor: .secondarySystemGroupedBackground))
+            .clipShape(RoundedRectangle(cornerRadius: 18))
+            .overlay(RoundedRectangle(cornerRadius: 18).stroke(Color.primary.opacity(0.05)))
+    }
 }
 
 struct StatusBadge: View {
