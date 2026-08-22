@@ -12,18 +12,18 @@ enum HWTheme {
 struct HWCard<Content: View>: View {
     @ViewBuilder let content: Content
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) { content }
-            .padding(18)
+        VStack(alignment: .leading, spacing: HWSpacing.medium) { content }
+            .padding(HWSpacing.card)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Color(uiColor: .secondarySystemGroupedBackground))
-            .clipShape(RoundedRectangle(cornerRadius: 18))
-            .overlay(RoundedRectangle(cornerRadius: 18).stroke(Color.primary.opacity(0.05)))
+            .clipShape(RoundedRectangle(cornerRadius: HWRadius.card))
+            .overlay(RoundedRectangle(cornerRadius: HWRadius.card).stroke(Color.primary.opacity(0.05)))
     }
 }
 
 struct StatusBadge: View {
     let text: String; var color: Color = HWTheme.purple
-    var body: some View { Text(text).font(.caption.weight(.semibold)).padding(.horizontal, 10).padding(.vertical, 6).foregroundStyle(color).background(color.opacity(0.12)).clipShape(.capsule).accessibilityLabel("Status: \(text)") }
+    var body: some View { Text(text).font(.caption.weight(.semibold)).padding(.horizontal, HWSpacing.medium).padding(.vertical, HWSpacing.small).foregroundStyle(color).background(color.opacity(0.12)).clipShape(.capsule).accessibilityLabel("Status: \(text)") }
 }
 
 extension Double {
@@ -35,5 +35,5 @@ extension TimeInterval { var durationLabel: String { (self / 3600).hoursLabel } 
 
 struct EmptyState: View {
     let icon: String, title: String, message: String
-    var body: some View { VStack(spacing: 10) { Image(systemName: icon).font(.system(size: 32)).foregroundStyle(HWTheme.purple); Text(title).font(.headline); Text(message).font(.subheadline).foregroundStyle(HWTheme.secondary).multilineTextAlignment(.center) }.frame(maxWidth: .infinity).padding(32) }
+    var body: some View { VStack(spacing: HWSpacing.medium) { Image(systemName: icon).font(.system(size: 32)).foregroundStyle(HWTheme.purple); Text(title).font(.headline); Text(message).font(.subheadline).foregroundStyle(HWTheme.secondary).multilineTextAlignment(.center) }.frame(maxWidth: .infinity).padding(HWSpacing.extraExtraLarge) }
 }
