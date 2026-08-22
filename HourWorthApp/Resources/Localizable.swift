@@ -1,6 +1,6 @@
 import Foundation
 
-enum AppStrings {
+enum Localizable {
     enum Tabs {
         static let home = "Home"
         static let projects = "Projects"
