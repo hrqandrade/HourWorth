@@ -4,6 +4,8 @@
 
 HourWorth is a local-first iOS app for freelancers to manage projects, track work and understand what each engagement was really worth.
 
+Current version: **1.0.0**
+
 ## Product
 
 The app connects delivery, time and payment. A freelancer can create clients and projects, run a reliable timestamp-based timer, add manual entries, record payments and finish with an honest comparison between estimated effort, actual effort and effective hourly rate.
@@ -53,6 +55,10 @@ Tests cover fixed-price and hourly calculations, partial payments and completion
 - Persistence stays behind one repository boundary; the initial store uses a small atomic Codable snapshot.
 - The app deliberately excludes invoicing, banking integrations, authentication, CRM automation and external calendar sync.
 
+## Versioning
+
+HourWorth follows Semantic Versioning. The public app version is defined by `MARKETING_VERSION`; the internal build number uses `CURRENT_PROJECT_VERSION`. Release notes are maintained in [CHANGELOG.md](CHANGELOG.md).
+
 ## Roadmap
 
 - SwiftData repository adapter and migration tests
@@ -63,4 +69,3 @@ Tests cover fixed-price and hourly calculations, partial payments and completion
 ## License
 
 MIT
-
