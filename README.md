@@ -61,10 +61,7 @@ HourWorth follows Semantic Versioning. The public app version is defined by `MAR
 
 ## Roadmap
 
-- SwiftData repository adapter and migration tests
-- Scope-request lifecycle and richer calendar visualization
-- Deterministic end-to-end UI journeys
-- Portuguese localization
+Product delivery and technical evolution are maintained together in [ROADMAP.md](ROADMAP.md). Upcoming work includes domain hardening, deterministic time and money handling, repository boundaries, SwiftData migration, UI journeys and Portuguese localization.
 
 ## License
 
